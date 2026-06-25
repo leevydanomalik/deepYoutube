@@ -1,0 +1,11 @@
+services:
+  youtube:
+    build: .
+    container_name: youtube
+    ports:
+      - "8005:8000"
+    environment:
+      YOUTUBE_DB: /srv/data/youtube.db
+    volumes:
+      - ./data:/srv/data
+    restart: unless-stopped
